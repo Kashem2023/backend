@@ -8,7 +8,8 @@ router.route('/getAllProductHome').get(getAllProductHome)
 router
     .route('/products/:id')
     .put(updateProduct)
-    .delete(deleteProduct)
     .get(getProductDetails)
+
+router.route('/products/delete').post(deleteProduct)
 
 module.exports = router
