@@ -17,6 +17,10 @@ const productSchema = new mongoose.Schema({
         maxLength: [8, "Price cannot exceed 8 characters"],
         default: null
     },
+    selectedC: {
+        type: String,
+        required: true
+    },
     ratings: {
         type: Number,
         default: 0,

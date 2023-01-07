@@ -96,7 +96,6 @@ exports.deleteProduct = catchAsyncError(async (req, res) => {
 
     let product = await Product.findById(req.body.id)
 
-    console.log(product);
 
     if (!product) {
         return res.status(500).json({
