@@ -50,3 +50,12 @@ exports.getMethod = catchAsyncError(async (req, res, next) => {
     }
 
 })
+
+
+exports.paymentInfo = async (req, res) => {
+    res.json({
+        bankName: process.env.BANK_NAME,
+        accountNumber: process.env.ACCOUNT_NUMBER,
+        userName: process.env.USER_NAME
+    })
+}

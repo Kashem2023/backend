@@ -20,14 +20,7 @@ const sendEmail = async (options) => {
         from: process.env.EMAIL,
         to: options.email,
         subject: "Order Complete Mail",
-        text: `Your Order ar Complete after Payment Success
-
-        Bank PayMent Details = 
-
-        BANK NAME: ${process.env.BANK_NAME},
-        ACCOUNT NUMBER: ${process.env.ACCOUNT_NUMBER},
-        USER NAME: ${process.env.USER_NAME}
-        `,
+        text: `your Order complete succesfully`,
     };
 
     await transporter.sendMail(mailOptions);
