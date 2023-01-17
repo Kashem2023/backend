@@ -4,14 +4,19 @@ const cookieParser = require('cookie-parser')
 const app = express()
 require('dotenv').config()
 app.use(cors({
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
 }));
 app.use(cookieParser())
-app.use(express.json({limit: '50mb'}));
+app.use(express.json({ limit: '50mb' }));
 const router = require("./routes")
 app.use(router)
 const errorMiddleware = require('./middleware/error')
 app.use(errorMiddleware)
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 app.get('/', (req, res) => {
     res.json({
