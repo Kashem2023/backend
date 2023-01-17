@@ -13,10 +13,6 @@ app.use(router)
 const errorMiddleware = require('./middleware/error')
 app.use(errorMiddleware)
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
 
 app.get('/', (req, res) => {
     res.json({
